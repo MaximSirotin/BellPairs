@@ -4241,7 +4241,6 @@ def plot_LER_post_v2(circuit, dist=3, errs=linspace(0.1,1,10)*1e-3, filename='st
                 json_metadata={'d': dist, 'p': noise},
                 postselection_mask = bit_packed_array_for_this_circ_dets,
             )
-            # for d in [3, 5, 7, 9]
             for noise in errs
         ]
     else:
@@ -4252,7 +4251,7 @@ def plot_LER_post_v2(circuit, dist=3, errs=linspace(0.1,1,10)*1e-3, filename='st
         decoders=['pymatching'],
         max_shots=1_000_000,
         max_errors=100_000,
-        save_resume_filepath = filename,
+        # save_resume_filepath = filename,
     )
     fig, ax = plt.subplots(1, 2, figsize=(10,4))
     plt.subplots_adjust(wspace=0.25)
